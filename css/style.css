@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(https://img.freepik.com/free-vector/purple-watercolor-galaxy-background_23-2149248308.jpg?w=1380&t=st=1675450989~exp=1675451589~hmac=68e0e3d514dc1ba589b0980224670a57482267df3b4ec3926500974285ebe87a);
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.cardTile div {
+    height: 105px;
+}
+
+.front {
+    align-items: center;
+    position: absolute;
+    display: flex;
+    width: 150px;
+    height: 1500px;
+    justify-content: center;
+    border: 2px solid rgb(128, 209, 224);
+    border-radius: 5px;
+    background-color: pink;
+} 
+
+.back {
+    background-color: rgb(65, 202, 215);
+    display: flex;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    max-width: 1000px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 10px;
+}
+
+button {
+    font-size: 16px;
+    background-color: rgb(211, 177, 242);
+    color: rgb(44, 12, 75);
+    padding: 5px 5px 5px 5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.statsContainer {
+    max-width: 500px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: pink;
+    color: rgb(173, 40, 140);
+    border: 2px solid pink;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h4 {
+    color: rgb(173, 40, 140);
+}
+
+.ga {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    flex-wrap: wrap;
+}
+
+/* .wrapper {
+    position
+    height: 500px;
+    width:500px;
+    background-color: rgb(241, 187, 240);
+    border-radius: 5px;
+    box-shadow: 5px pink;
+    top: 150px;
+    left: 150px;
+} */
+
+/* .end-game {
+    position: absolute;
+    display: grid;
+} */
