@@ -28,6 +28,7 @@ img {
     border: 2px solid rgb(128, 209, 224);
     border-radius: 5px;
     background-color: pink;
+    transform: rotateY(90deg);
 } 
 
 .back {
@@ -80,17 +81,15 @@ button {
     justify-content: center;
     align-items: center;
 
+
 }
 
-h4 {
-    color: rgb(173, 40, 140);
+.flip {
+    transform: rotateY(0deg);
 }
 
-.ga {
-    display: flex;
-    height: 300px;
-    width: 300px;
-    flex-wrap: wrap;
+.checkForMatch {
+    transform: rotateY(0deg);
 }
 
 /* .wrapper {
