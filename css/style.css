@@ -6,7 +6,8 @@
 
 
 body {
-    background-image: url(https://img.freepik.com/free-vector/purple-watercolor-galaxy-background_23-2149248308.jpg?w=1380&t=st=1675450989~exp=1675451589~hmac=68e0e3d514dc1ba589b0980224670a57482267df3b4ec3926500974285ebe87a);
+    background-image: url(https://i.pinimg.com/originals/7c/a2/a2/7ca2a2be56568ae03d5dc18b21de6966.png);
+    background-size: cover;
 }
 
 img {
@@ -53,6 +54,8 @@ img {
     margin: auto;
     gap: 10px;
 }
+
+
 
 button {
     font-size: 16px;

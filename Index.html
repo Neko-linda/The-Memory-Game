@@ -11,73 +11,74 @@
 
 <body>
 
-    <div id="start-screen" class="start" style="display:block">
+    <!-- WIP: <div id="start-screen" class="start" style="display:block">
         <button onclick='startGame()'>Start Game</button>
-    </div>
+    </div> --> 
     
 
 <div class="gameWrapper">
-   
 <!-- here im going to use data index after learning about the attributes on the css tricks website. -->
     <div class="imageContainer">
+            
+
 
         <div class="cardTile">
-            <div class="front" data-index="1"><img src="IconImages/KawaiiCat.png" alt=""></div>
+            <div class="front" data-key="1" data-uid="100"><img src="IconImages/KawaiiCat.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="1"><img src="IconImages/KawaiiCat.png" alt=""></div>
+            <div class="front" data-key="1" data-uid="101"><img src="IconImages/KawaiiCat.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="2"><img src="IconImages/KawaiiCherries.png" alt=""></div>
+            <div class="front" data-key="2" data-uid="102"><img src="IconImages/KawaiiCherries.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="2"><img src="IconImages/KawaiiCherries.png" alt=""></div>
+            <div class="front" data-key="2" data-uid="103"><img src="IconImages/KawaiiCherries.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="3"><img src="IconImages/KawaiiHearts.png" alt=""></div>
+            <div class="front" data-key="3" data-uid="104"><img src="IconImages/KawaiiHearts.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="3"><img src="IconImages/KawaiiHearts.png" alt=""></div>
+            <div class="front" data-key="3" data-uid="105"><img src="IconImages/KawaiiHearts.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="4"><img src="IconImages/KawaiiMoon.png" alt=""></div>
+            <div class="front" data-key="4" data-uid="106"><img src="IconImages/KawaiiMoon.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="4"><img src="IconImages/KawaiiMoon.png" alt=""></div>
+            <div class="front" data-key="4" data-uid="107"><img src="IconImages/KawaiiMoon.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="5"><img src="IconImages/KawaiiSun.png" alt=""></div>
+            <div class="front" data-key="5" data-uid="108"><img src="IconImages/KawaiiSun.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="5"><img src="IconImages/KawaiiSun.png" alt=""></div>
+            <div class="front" data-key="5" data-uid="109"><img src="IconImages/KawaiiSun.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="5"><img src="IconImages/KawaiiLion.png" alt=""></div>
+            <div class="front" data-key="6" data-uid="110"><img src="IconImages/KawaiiLion.png" alt=""></div>
             <div class="back"></div>
         </div>
 
         <div class="cardTile">
-            <div class="front" data-index="5"><img src="IconImages/KawaiiLion.png" alt=""></div>
+            <div class="front" data-key="6" data-uid="111"><img src="IconImages/KawaiiLion.png" alt=""></div>
             <div class="back"></div>
         </div>
 
@@ -85,7 +86,8 @@
 
     <div class="statsContainer">
         <div class="moveCounter">Moves made: 0</div>
-        <div id=“timer”>Time: <span id=“second”>120</span></div>
+        <!-- <div id=“timer”>Time: <span id=“second”>120</span></div> -->
+        <div class="score">Your score: 0</div>
 
         <div class="quitButtonContainer">
             <button id="'quit" class="cancelGame">Quit Game</button>

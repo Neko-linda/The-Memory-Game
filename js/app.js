@@ -1,4 +1,4 @@
-//MVP goals: Give user a greeting at opening and instructions on how to play. 
+//MVP goals: Give user a greeting at opening and instructions on how to play. !!!!DONE!!!!! 
 
 //Make a scoreboard that shows current score
 
@@ -6,18 +6,19 @@
 
 //Player can lose game
 
-//As a user, I want to be able to click on the cards in order to flip (or interact with) them instead of using my keyboard so that it's easier to interact. !!!1DONE!!!!
+//As a user, I want to be able to click on the cards in order to flip (or interact with) them instead of using my keyboard so that it's easier to interact. !!!!DONE!!!!
+let playerGreeting = "Hello! Welcome to the memory game. You can press the start button to begin. The way the memory game is played is as follows: Click on the cards you want to flip over. If you get two cards that match you will gain points. Once you find all matching pairs - you win!"
 
+alert(playerGreeting);
+//-->
 
-// document.addEventListener('DOMContentLoaded', () => {
+    const gameElements = {
 
-    // const gameElements = {
-
-    //     gameStart: document.querySelector('button'),
-    //     gameboard : document.querySelector('gameBoard'),
-    //     moves: document.querySelector('moveCounter'),
-    //     timer: document.querySelector('timer')
-    // }
+        gameStart: document.querySelector('button'),
+        gameboard : document.querySelector('gameBoard'),
+        moves: document.querySelector('moveCounter'),
+        timer: document.querySelector('timer')
+    }
 
     // startGame() {
     //     this.toggleScreen('start-screen', false);
@@ -28,18 +29,17 @@
 
 //declaring the elements/Variables
 
-    const timer = document.querySelector('.timer')
     const card = document.querySelectorAll('.cardTile')
     const frontOfCard = document.querySelectorAll('.front')
     const backOfCard = document.querySelectorAll('.back')
+    const stopButton = document.getElementById("quit")
 
 
-    // Initial stats when game starts
+//     // Initial stats when game starts
 
-const stats = {
+    const stats = {
 
     gameStart: false,
-    totalTime: 0,
     totalFlips: 0,
     movesMade: 0,
     cardsFlipped: 0,
@@ -57,11 +57,8 @@ const stats = {
     
     //adding a function for card flipping and also shuffling the images after restarting the game.
 
-
     shuffleImage()
     flipCard()
-    checkForMatch()
-
     //
 
     function shuffleImage() {
@@ -74,37 +71,145 @@ const stats = {
 
         })
     }
+    //This code is working:::
 
     function flipCard() {
 
         for(let i = 0; i<card.length; i++) {
             
             card[i].addEventListener('click',()=>{
-
                 //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-
                 frontOfCard[i].classList.add('flip')
                 const flippedCard = document.querySelectorAll('.flip')
 
-                if(flippedCard.length == 2){
-                    checkForMatch() 
+                if(flippedCard.length === 2){
+                    checkForMatch();
                 }
             })
         }
     }
     //Adding a function for the "Matching" call in the flip card function
 
-    function checkForMatch(firstCard, secondCard) {
-        if(firstCard.dataset.index == secondCard.dataset.index) {
+//     let hasFlippedCard = false;
+//     let firstCard, secondCard;
 
-        } else {
-            setTimeout(() => {
-                firstCard.classList.remove('flip')
-                secondCard.classList.remove('flip')
-            }, 100);
-        }
-    }
+//   function flipCard() {
+//    this.classList.add('flip');
 
+//    if (!hasFlippedCard) {
+//      hasFlippedCard = true;
+//      firstCard = this;
+//    }
+//   }
+//   return;
+
+secondCard = this;
+hasFlippedCard = false;
+
+checkForMatch();
+
+function checkForMatch() {
+if (firstCard.dataset.key === secondCard.dataset.key) {
+  disableCards();
+  return;
+}
+
+unflipCards();
+}
+
+function disableCards() {
+firstCard.removeEventListener('click', flipCard);
+secondCard.removeEventListener('click', flipCard);
+}
+
+function unflipCards() {
+setTimeout(() => {
+  firstCard.classList.remove('flip');
+  secondCard.classList.remove('flip');
+}, 1500);
+}
+
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+
+
+
+    //This is working::
+    // function checkForMatch(card, uid) {
+    //     let divsCards = document.querySelectorAll('.cardTile');
+    //     cardsLen = divsCards.length;
+    
+    //     for (i = 0; i < cardsLen; i++) {
+    //         var currentCard = divsCards[i];
+    
+    //         if (currentCard.dataset.card === card && currentCard.dataset.uid !== uid) {
+    //         } else {
+    //             frontOfCard[i].classList.remove('flip')
+    //             frontOfCard[i].classList.remove('flip')
+    //         }
+    //     }
+    // } 
+
+
+
+
+
+
+
+
+
+
+    // ---------
+    // function checkForMatch() {
+    //     let divsCards = Array.from(document.querySelectorAll('.card'));
+    //     for (let i = 0; i < divsCards.length; i++) {
+    //       let currentCard = divsCards[i]; // current element at index `i`
+    //       divsCards.filter((_, index) => index !== i) // exclude current element          
+    //       .forEach(function(card) {
+    //         // compare remainder of elements to excluded element
+    //         if (card.dataset.card === currentCard.dataset.card) {
+    //           currentCard.classList.add('flipped');
+    //         }
+    //       });
+    //     }
+    //   }
+
+
+// function flipCard() {
+
+//     for(let i = 0; i<card.length; i++) {
+        
+//         card[i].addEventListener('click',()=>{
+
+//             //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+//             frontOfCard[i].classList.add('flip')
+//             const flippedCard = document.querySelectorAll('.flip')
+
+//             if(flippedCard.length === 2){
+//                 checkForMatch();
+//             }
+//         },1000);
+//     }
+// }
+
+
+
+
+    // let chosencard = card.attributes["data-key"].value 
+    //         console.log(chosencard)
+
+    // function checkForMatch(){
+
+    //     if(card.attributes["data-key"].value !== card.attributes["data-key"].value) {
+    //         // let chosencard = element.attributes["data-key"].value 
+    //         setTimeout(() => {
+    //             card.classList.remove('flip')
+    //             card.classList.remove('flip')
+    //         }, 100);
+    //     }
+    // }
 
     //used settimeout to show the player that they chose the wrong pairs https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
        
@@ -125,23 +230,3 @@ const stats = {
 //     {name: 'sun', Img: 'IconImages/KawaiiSun'},
 //     {name: 'sunflower', Img: 'IconImages/KawaiiSunflower.png'},
 // ];
-
-
-// // Game board
-// const table = document.querySelector('.gameBoard')
-
-// function randomCards () {
-//     for (let i = 0; i < cardOptions.length; i++) {
-//         var card = document.createElement('Img')
-//         card.setAttribute('src', 'IconImages/QuestionMark.png')
-//         card.setAttribute('data-id',i)
-//         // card.addEventListener('click', cardflip)
-//         table.appendChild(card)
-//Here I learned about "Append child" through MDNWebdocs and a bit of googling.
-//     }
-// }
-
-// function startGame() {
-//     console.log('start game');
-//     gameloop.start();
-// }
