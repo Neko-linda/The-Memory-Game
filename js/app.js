@@ -75,7 +75,7 @@ alert(playerGreeting);
 
     function flipCard() {
 
-        for(let i = 0; i<card.length; i++) {
+        for(let i = 0; i < card.length; i++) {
             
             card[i].addEventListener('click',()=>{
                 //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
@@ -90,77 +90,47 @@ alert(playerGreeting);
     }
     //Adding a function for the "Matching" call in the flip card function
 
-//     let hasFlippedCard = false;
-//     let firstCard, secondCard;
-
-//   function flipCard() {
-//    this.classList.add('flip');
-
-//    if (!hasFlippedCard) {
-//      hasFlippedCard = true;
-//      firstCard = this;
-//    }
-//   }
-//   return;
-
-secondCard = this;
-hasFlippedCard = false;
-
-checkForMatch();
-
-function checkForMatch() {
-if (firstCard.dataset.key === secondCard.dataset.key) {
-  disableCards();
-  return;
-}
-
-unflipCards();
-}
-
-function disableCards() {
-firstCard.removeEventListener('click', flipCard);
-secondCard.removeEventListener('click', flipCard);
-}
-
-function unflipCards() {
-setTimeout(() => {
-  firstCard.classList.remove('flip');
-  secondCard.classList.remove('flip');
-}, 1500);
-}
-
-cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-
-
-
     //This is working::
-    // function checkForMatch(card, uid) {
-    //     let divsCards = document.querySelectorAll('.cardTile');
-    //     cardsLen = divsCards.length;
+
+    function checkForMatch(card, uid) {
+
+        let divsCards = document.querySelectorAll('.cardTile');
+        cardsLen = divsCards.length;
     
-    //     for (i = 0; i < cardsLen; i++) {
-    //         var currentCard = divsCards[i];
+        for (i = 0; i < cardsLen; i++) {
+            var currentCard = divsCards[i];
     
-    //         if (currentCard.dataset.card === card && currentCard.dataset.uid !== uid) {
-    //         } else {
-    //             frontOfCard[i].classList.remove('flip')
-    //             frontOfCard[i].classList.remove('flip')
-    //         }
-    //     }
-    // } 
-
-
-
-
-
-
-
-
-
-
+            if (currentCard.dataset.card === card && currentCard.dataset.uid !== uid) {
+                // We have found a match
+            } else {
+                frontOfCard[i].classList.remove('flip')
+                frontOfCard[i].classList.remove('flip')
+            }
+        }
+    }
     // ---------
+// let matchingCards = 0;
+
+//     function checkForMatch() {
+//         let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+      
+//         isMatch ? disableCards() : unflipCards();
+//       }
+      
+//       function disableCards() {
+//         firstCard.removeEventListener('click', flipCard);
+//         secondCard.removeEventListener('click', flipCard);
+//         matchingCards++
+//         console.log(matchingCards)
+//         if (matchingCards === 4) {
+//           setTimeout(function(){
+//           alert("Congratulations! You found all the pairs!"); 
+//         }, 1000)
+//       };
+//     }
+
+
+
     // function checkForMatch() {
     //     let divsCards = Array.from(document.querySelectorAll('.card'));
     //     for (let i = 0; i < divsCards.length; i++) {
