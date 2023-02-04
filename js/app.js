@@ -1,10 +1,12 @@
-//MVP goals: Give user a greeting at opening
+//MVP goals: Give user a greeting at opening and instructions on how to play. 
 
 //Make a scoreboard that shows current score
 
 //Make a count that shows how many moves were made
 
 //Player can lose game
+
+//As a user, I want to be able to click on the cards in order to flip (or interact with) them instead of using my keyboard so that it's easier to interact. !!!1DONE!!!!
 
 
 // document.addEventListener('DOMContentLoaded', () => {
@@ -17,17 +19,51 @@
     //     timer: document.querySelector('timer')
     // }
 
+    // startGame() {
+    //     this.toggleScreen('start-screen', false);
+    //     this.toggleScreen('canvas', true);
+    //     this.prepareCanvas();
+    // }
+
+
+//declaring the elements/Variables
 
     const timer = document.querySelector('.timer')
     const card = document.querySelectorAll('.cardTile')
     const frontOfCard = document.querySelectorAll('.front')
     const backOfCard = document.querySelectorAll('.back')
 
+
+    // Initial stats when game starts
+
+const stats = {
+
+    gameStart: false,
+    totalTime: 0,
+    totalFlips: 0,
+    movesMade: 0,
+    cardsFlipped: 0,
+    loop: null
+}
+
+    // giving the start button a function 
+    
+    // toggleScreen(id, toggle) {
+    //     let element = document.getElementById(id);
+    //     let display = (toggle) ? 'block' : 'none';
+    //     element.style.display = display;
+    // }
+
+    
     //adding a function for card flipping and also shuffling the images after restarting the game.
 
 
     shuffleImage()
     flipCard()
+    checkForMatch()
+
+    //
+
     function shuffleImage() {
         card.forEach(c => {
 
@@ -44,35 +80,34 @@
         for(let i = 0; i<card.length; i++) {
             
             card[i].addEventListener('click',()=>{
+
+                //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
                 frontOfCard[i].classList.add('flip')
                 const flippedCard = document.querySelectorAll('.flip')
 
                 if(flippedCard.length == 2){
-                    checkForMatch(flippedCard[0], flippedCard[1]) //here is where we add a callback for the finding a match function
+                    checkForMatch() 
                 }
             })
         }
     }
-
-
     //Adding a function for the "Matching" call in the flip card function
 
-    function checkForMatch(firstCard , secondCard) {
-    //used settimeout to show the player that they chose the wrong pairs https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-    if(firstCard.dataset.index == secondCard.dataset.index) {
-        firstCard.classlist.remove('flip')
-        secondCard.classList.remove('flip')
+    function checkForMatch(firstCard, secondCard) {
+        if(firstCard.dataset.index == secondCard.dataset.index) {
 
-        firstCard.classList.add('checkForMatch')
-        secondCard.classList.add('checkForMatch')
-    }else{
+        } else {
             setTimeout(() => {
-            firstCard.classlist.remove('flip')
-            secondCard.classList.remove('flip')
-        }, 1000);
+                firstCard.classList.remove('flip')
+                secondCard.classList.remove('flip')
+            }, 100);
+        }
     }
-}
 
+
+    //used settimeout to show the player that they chose the wrong pairs https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+       
     // ---------
 
 
@@ -92,18 +127,6 @@
 // ];
 
 
-
-//Initial stats when game starts
-
-// const stats = {
-
-//     gameStart: false,
-//     time: 0,
-//     movesMade: 0,
-//     cardsFlipped: 0,
-
-// }
-
 // // Game board
 // const table = document.querySelector('.gameBoard')
 
@@ -116,4 +139,9 @@
 //         table.appendChild(card)
 //Here I learned about "Append child" through MDNWebdocs and a bit of googling.
 //     }
+// }
+
+// function startGame() {
+//     console.log('start game');
+//     gameloop.start();
 // }

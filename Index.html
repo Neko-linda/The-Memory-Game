@@ -11,17 +11,13 @@
 
 <body>
 
-<div class="wrapper">
-
-    <div class="statsContainer">
-        <div class="moveCounter">Moves made: 0</div>
-        <div id=“timer”>Time: <span id=“second”>120</span></div>
-
-        <div class="gameBoard">
-        <div class="board"></div>
-        </div>
+    <div id="start-screen" class="start" style="display:block">
+        <button onclick='startGame()'>Start Game</button>
     </div>
+    
 
+<div class="gameWrapper">
+   
 <!-- here im going to use data index after learning about the attributes on the css tricks website. -->
     <div class="imageContainer">
 
@@ -87,9 +83,15 @@
 
     </div>
 
-    <div class="controls">
-        <button>Start Game</button>
+    <div class="statsContainer">
+        <div class="moveCounter">Moves made: 0</div>
+        <div id=“timer”>Time: <span id=“second”>120</span></div>
+
+        <div class="quitButtonContainer">
+            <button id="'quit" class="cancelGame">Quit Game</button>
+        </div>
     </div>
+
 
 </div>
 
