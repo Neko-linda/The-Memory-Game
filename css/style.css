@@ -12,7 +12,7 @@ body {
 
 .stats-container {
     background-color: pink;
-    border-radius: 30px;
+    border-radius: 20px;
     border-bottom: 5px solid rgb(122, 207, 218);
 }
 
@@ -33,19 +33,5 @@ h3 {
     gap: 2px;
     column-count: auto;
 }
-
-/* .wrapper {
-    box-sizing: content-box;
-    width: 500px;
-    padding: 50px 50px;
-    background-color: rgb(237, 176, 229);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    border-radius: 20px;
-    box-shadow: 0 5px 50px rgb(235, 9, 231);
-} */
-
 
 

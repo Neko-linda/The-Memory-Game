@@ -38,7 +38,7 @@ const items = [
 
    //shuffles the card images everytime the page is reset or game starts again
 
-
+   items.sort(() => 0.5 - Math.random());
 
    // Old psuedocode that didnt work
 //    const generateRandom = (size = 4) => {
