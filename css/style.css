@@ -14,24 +14,33 @@ body {
     background-color: pink;
     border-radius: 20px;
     border-bottom: 5px solid rgb(122, 207, 218);
+    border-top: 5px solid rgb(122, 207, 218);
+    border-left: 5px solid rgb(122, 207, 218);
+    border-left: 5px solid rgb(122, 207, 218);
+    border-color: rgb(122, 207, 218);
+    opacity: 75%;
 }
 
 h3 {
     text-align: center;
     color: rgb(169, 49, 193);
     padding: 40px 10px 40px 10px;
-
+    text-decoration: underline;
 }
 
 .grid {
+    box-sizing: border-box;
+    box-shadow: 0 0.9em 2.8em rgb(42, 226, 239);
+    position: absolute;
+    left: 37%;
+    top: 20%;
     background-color: pink;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     height: 400px;
     width: 200px;
-    gap: 2px;
-    column-count: auto;
+   
 }
 
 

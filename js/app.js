@@ -4,9 +4,9 @@ let playerGreeting = "Hello! Welcome to the memory game. You can press the start
 alert(playerGreeting);
 //-->
 // Below
-// Give the user a greeting and instructions before the game actually begins.
-// A visible count that shows the user how many pairs they found
-// Have the cards "flip" over to show which image was clicked upon
+// Give the user a greeting and instructions before the game actually begins. DONE
+// A visible count that shows the user how many pairs they found. DONE
+// Have the cards "flip" over to show which image was clicked upon. DONE
 // have the possibility of the game ending if a wrong move is made
 
 
@@ -109,6 +109,7 @@ function checkForMatch() {
     resultDisplay.textContent = cardsWon.length;
 
     if (cardsWon.length === items.length/2) {
+        alert('Congragulations! All matches have been found! You can refresh the page to play again!')
         resultDisplay.textContent = 'Congragulations! All matches have been found!'
     };
 }
